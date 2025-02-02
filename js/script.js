@@ -22,18 +22,7 @@ function addTodo() {
     }
 }
 
-// Fungsi untuk mengubah tinggi scroll secara dinamis
-function setScrollHeight() {
-    const unfinishedList = document.getElementById('unfinished-list');
-    const finishedList = document.getElementById('finished-list');
-
-    // Menghitung tinggi maksimum berdasarkan jumlah item
-    const maxHeight = Math.min(unfinishedList.scrollHeight, 300);  // Max height 300px
-    unfinishedList.style.maxHeight = `${maxHeight}px`;
-    finishedList.style.maxHeight = `${maxHeight}px`;
-}
-
-// Render tugas ke dalam tab yang sesuai. Setelah render, panggil fungsi ini untuk menyesuaikan scroll
+// Render tugas ke dalam tab yang sesuai
 function renderTodos() {
     const unfinishedList = document.getElementById('unfinished-list');
     const finishedList = document.getElementById('finished-list');
@@ -75,13 +64,11 @@ function renderTodos() {
 
         if (todo.completed) {
             finishedList.appendChild(li);
+            editButton.remove('active')
         } else {
             unfinishedList.appendChild(li);
         }
     });
-
-    // Panggil fungsi setScrollHeight setelah setiap render
-    setScrollHeight();
 }
 
 // Menandai tugas sebagai selesai atau belum selesai
@@ -155,21 +142,3 @@ function showTab(tab) {
         buttons[1].classList.add('active');
     }
 }
-
-// Fungsi untuk pencaharian Task
-function filterTodos() {
-    const searchTerm = document.getElementById('search-input').value.toLowerCase();
-    const lists = [document.getElementById('unfinished-list'), document.getElementById('finished-list')];
-
-    lists.forEach(list => {
-        Array.from(list.children).forEach(li => {
-            const taskText = li.querySelector('span').textContent.toLowerCase();
-            if (taskText.includes(searchTerm)) {
-                li.style.display = 'flex';
-            } else {
-                li.style.display = 'none';
-            }
-        });
-    });
-}
-
