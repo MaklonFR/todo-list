@@ -142,3 +142,28 @@ function showTab(tab) {
         buttons[1].classList.add('active');
     }
 }
+
+function filterTodos() {
+    const searchTerm = document.getElementById('search-input').value.toLowerCase();
+    const lists = [document.getElementById('unfinished-list'), document.getElementById('finished-list')];
+
+    lists.forEach(list => {
+        Array.from(list.children).forEach(li => {
+            const taskTextElement = li.querySelector('span');
+            
+            if (taskTextElement) { // Pastikan elemen span ada
+                const taskText = taskTextElement.textContent.toLowerCase();
+                if (taskText.includes(searchTerm)) {
+                    li.style.display = 'flex';
+                } else {
+                    li.style.display = 'none';
+                }
+            } else {
+                // Jika tidak ada span dalam li, sembunyikan li
+                li.style.display = 'none';
+            }
+        });
+    });
+}
+
+
