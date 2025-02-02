@@ -32,10 +32,10 @@ open index.html
 
 ## Result
 
-- Unfinished
-  ![image](https://github.com/user-attachments/assets/b0791e48-b55b-4a4e-936e-744643474a54)
+### Unfinished
+![image](https://github.com/user-attachments/assets/b0791e48-b55b-4a4e-936e-744643474a54)
 
-- Finished
-  ![image](https://github.com/user-attachments/assets/24a160dd-b79c-44d5-b93b-82d0704df81a)
+### Finished
+![image](https://github.com/user-attachments/assets/24a160dd-b79c-44d5-b93b-82d0704df81a)
 
 
