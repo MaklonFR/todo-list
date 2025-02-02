@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="image/logo.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+      <header class="header">
+          <img src="image/logo.png" alt="Logo" class="logo">
+          <h1>To-Do List | WebApp</h1>
+      </header>
+
+      <div class="input-container">
+          <input type="text" id="todo-input" placeholder="Add a new task...">
+          <button onclick="addTodo()"><i class="fa-solid fa-plus"></i> Task</button>
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="tabs">
+          <button class="tab-button active" onclick="showTab('unfinished')"><i class="fa-regular fa-rectangle-list"></i> Started</button>
+          <button class="tab-button" onclick="showTab('finished')"><i class="fa-solid fa-check-double"></i> Finished</button>
+      </div>
+
+      <!-- Search Input -->
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search tasks..." onkeyup="filterTodos()">
+      </div>
+
+      <!-- Unfinished Tasks -->
+      <ul id="unfinished-list" class="todo-list"></ul>
+
+      <!-- Finished Tasks -->
+      <ul id="finished-list" class="todo-list hidden"></ul>
+
+      <footer class="footer">
+          <p>Created by ❤️ by MaklonFR | Copyright 2025</p>
+      </footer>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
